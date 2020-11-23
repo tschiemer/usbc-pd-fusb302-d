@@ -1,5 +1,5 @@
 # usbc-pd-fusb302-d
-Library for ONSEMI FUSB302-D (USB-C Controller) for PD negotiation with STM32 HAL-based driver.
+Module for ONSEMI FUSB302-D (USB-C Controller) for PD negotiation with STM32 HAL-based driver.
 
 https://github.com/tschiemer/usbc-pd-fusb302-d
 
@@ -9,6 +9,7 @@ The functional core is given, but might yet need some adaption, notable points:
 - I2C abstraction and fusb302 driver was designed for the STM32 HAL.
 - The magic happens in file `CCHandshake.c`, in particular functions `pd_onSourceCapabilities` and `pd_createRequest` which you might want to adapt to your desired power configuration - otherwise **you might damage connected components**. Please also refer to the PD specs.
 - You might have to implement some platform functions like `DelayMs(..)` or `DBG(..)` and set some defines , I'm sure you'll figure it out.
+- This module could use a bit of love.
 
 ## Using
 
